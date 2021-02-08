@@ -12,8 +12,14 @@ $word2 = 'script';
 $word3 = 'serveur';
 
 //Question 2
-$nbr1 = '44';
-$nbr2 = '15';
+$nbr1 = 44;
+$nbr2 = 15;
+
+//Question 6
+$chain1 = 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+squid.';
+$chain2 = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, nulla nemo esse
+accusantium dolorum iste accusamus?';
 
 
 /**
@@ -41,7 +47,7 @@ $nbr2 = '15';
         <h1 class="<?php echo $bs_title_class; ?>"> Découverte des base du PHP</h1> 
 
         <p class="text-justify" id="intro">
-            <abbr title="PHP: Hypertext Preprocessor"><?php echo $word1;?></abbr> est un acronyme récursif, qui signifie <?php echo $def;?> : c'est un langage de <mark><?php echo $word2;?></mark> HTML,
+            <abbr title="PHP: Hypertext Preprocessor"><?= $word1;?></abbr> est un acronyme récursif, qui signifie <?php echo $def;?> : c'est un langage de <mark><?php echo $word2;?></mark> HTML,
             exécuté côté <mark><?php echo $word3;?></mark> . Sa syntaxe est empruntée aux langages C, Java et Perl , et
             est facile à apprendre. Le
             but de ce langage est de permettre aux développeurs web d'écrire des pages dynamiques rapidement, mais vous
@@ -80,10 +86,7 @@ $nbr2 = '15';
                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="card-body">
                         <p>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                            squid. <br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, nulla nemo esse
-                            accusantium dolorum iste accusamus?
+                            <?php echo $chain1,'<br>',$chain2; ?>
                         </p>
                     </div>
                 </div>
@@ -103,24 +106,54 @@ $nbr2 = '15';
                         <p>
                             La variable un est supérieure à la variable deux :
                             <!-- écrire votre code dans le span -->
-                            <span class="bg-secondary p-2"> résultat </span></p>
+                            <span class="bg-secondary p-2"> <?php if($nbr1 >= $nbr2) {
+                                echo 'True';
+                            }
+                            else {
+                                echo 'False';
+                            } ?> </span></p>
                         <p>La variable un est strictement supérieure à la variable deux :
                             <!-- écrire votre code dans le span -->
-                            <span class="bg-secondary p-2"> résultat </span>
+                            <span class="bg-secondary p-2"> <?php if($nbr1 > $nbr2) {
+                                echo 'True';
+                            }
+                            else {
+                                echo 'False';
+                            } ?> </span>
                         </p>
                         <p>La variable un est égale à la variable deux :
-                            <span class="bg-secondary p-2"> résultat </span>
+                            <span class="bg-secondary p-2"> <?php if($nbr1 == $nbr2) {
+                                echo 'True';
+                            }
+                            else {
+                                echo 'False';
+                            } ?> </span>
                         </p>
                         <p>La variable un est strictement égale à la variable deux :
                             <span class="bg-secondary p-2">
-                                résultat </span>
+                            <?php if($nbr1 === $nbr2) {
+                                echo 'True';
+                            }
+                            else {
+                                echo 'False';
+                            } ?> </span>
                         </p>
                         <p>La variable un est supérieure ou égale à la variable deux :
                             <span class="bg-secondary p-2">
-                                résultat </span>
+                            <?php if($nbr1 >= $nbr2) {
+                                echo 'True';
+                            }
+                            else {
+                                echo 'False';
+                            } ?> </span>
                         </p>
                         <p>La variable un est inférieure ou strictement égale à la variable deux :
-                            <span class="bg-secondary p-2"> résultat </span>
+                            <span class="bg-secondary p-2"> <?php if(($nbr1 < $nbr2) || ($nbr1 === $nbr2)) {
+                                echo 'True';
+                            }
+                            else {
+                                echo 'False';
+                            } ?> </span>
                         </p>
                     </div>
                 </div>
@@ -136,7 +169,13 @@ $nbr2 = '15';
                 </div>
                 <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
                     <div class="card-body">
-                        <h4>Liste des langages dont la syntaxe du PHP est inspirée</h4>
+                        <ul>
+                            <?php foreach($languages as $language) { ?>
+                            <li>
+                                <?= $language; ?>
+                            </li>    
+                            <?php } ?>
+                        </ul>
                         <!-- écrire votre code ici -->
                     </div>
                 </div>
