@@ -38,7 +38,7 @@ $nbr2 = '15';
 
 <body>
     <div class="container mt-5">
-        <h1 class="<?php // écrire la class bootstrap du titre ici  ?>"> Découverte des base du PHP</h1>
+        <h1 class="<?php echo $bs_title_class; ?>"> Découverte des base du PHP</h1> 
 
         <p class="text-justify" id="intro">
             <abbr title="PHP: Hypertext Preprocessor"><?php echo $word1;?></abbr> est un acronyme récursif, qui signifie <?php echo $def;?> : c'est un langage de <mark><?php echo $word2;?></mark> HTML,
@@ -60,11 +60,11 @@ $nbr2 = '15';
 
                 <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                     <div class="card-body">
-                        <p>Somme : 10 + 10</p>
-                        <p>Produit : 10 * 10</p>
-                        <p>Modulo : 10 % 10</p>
-                        <p>Différence : 10 - 10</p>
-                        <p>Division : 10 / 10</p>
+                        <p>Somme : <?php echo $nbr1 + $nbr2; ?></p>
+                        <p>Produit : <?php echo $nbr1 * $nbr2; ?></p>
+                        <p>Modulo : <?php echo $nbr1 % $nbr2; ?></p>
+                        <p>Différence : <?php echo $nbr1 - $nbr2; ?></p>
+                        <p>Division : <?php echo $nbr1 / $nbr2; ?></p>
                     </div>
                 </div>
             </div>
