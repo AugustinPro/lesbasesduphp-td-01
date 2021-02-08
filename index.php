@@ -5,6 +5,17 @@ $bs_title_class = 'text-center display-4';
 
 $languages = ['C', 'Java', 'Perl'];
 
+//Question 1
+$word1 = 'PHP';
+$def = '"PHP: Hypertext Preprocessor"';
+$word2 = 'script';
+$word3 = 'serveur';
+
+//Question 2
+$nbr1 = '44';
+$nbr2 = '15';
+
+
 /**
  * Votre code ici
  */
@@ -30,9 +41,8 @@ $languages = ['C', 'Java', 'Perl'];
         <h1 class="<?php // écrire la class bootstrap du titre ici  ?>"> Découverte des base du PHP</h1>
 
         <p class="text-justify" id="intro">
-            <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> est un acronyme récursif, qui signifie "PHP: Hypertext
-            Preprocessor" : c'est un langage de <mark>script</mark> HTML,
-            exécuté côté <mark>serveur</mark> . Sa syntaxe est empruntée aux langages C, Java et Perl , et
+            <abbr title="PHP: Hypertext Preprocessor"><?php echo $word1;?></abbr> est un acronyme récursif, qui signifie <?php echo $def;?> : c'est un langage de <mark><?php echo $word2;?></mark> HTML,
+            exécuté côté <mark><?php echo $word3;?></mark> . Sa syntaxe est empruntée aux langages C, Java et Perl , et
             est facile à apprendre. Le
             but de ce langage est de permettre aux développeurs web d'écrire des pages dynamiques rapidement, mais vous
             pouvez faire beaucoup plus avec PHP.
